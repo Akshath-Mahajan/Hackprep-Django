@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title> Blog | List View </title>
+  </head>
+  <body>
+    <h1> Blog List View </h1>
+    {% for blog in all_blogs %}
+    <a href="/blog/detail/{{blog.id}}">
+      <h6> {{ blog.title }} 
+        <span> {{ blog.views }} </span>
+      </h6>
+    </a>
+    {% endfor %}
+  </body>
+</html>
