@@ -13,5 +13,9 @@ def blogList(request):
 
 def blogDetail(request, id):
   blog = BlogPost.objects.get(id=id)
+  # Update number of views on blog 
+  blog.views += 1
+  blog.save()
+  
   context = {"blog": blog}
   return render(request, 'blog_detail.html', context)
